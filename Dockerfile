@@ -3,12 +3,16 @@ FROM python:3.10
 WORKDIR /app
 
 COPY backend/requirements.txt /app/
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend /app/
 
 ENV PYTHONUNBUFFERED=1
 
+# INFO PENTING — buka port 8000
 EXPOSE 8000
 
+# Jalankan Gunicorn dan bind ke 0.0.0.0:8000
 CMD ["gunicorn", "webskripsi.wsgi:application", "--bind", "0.0.0.0:8000", "--chdir", "skripsi"]
+
