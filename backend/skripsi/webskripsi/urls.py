@@ -5,5 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('match/', include('match.urls')),
     path('home/', include('home.urls')),
-   path('api/predict/', include('prediksi.urls')),   # ⬅️ ini penting
+   path('api/predict/', include('prediksi.urls')), 
 ]

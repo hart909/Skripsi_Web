@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=League+Gothic&display=swap');
+* {
+  font-family: 'Montserrat','League Gothic' sans-serif;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fade 0.2s ease-out;
+}
+
+.clip-triangle-top-right {
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.clip-triangle-bottom-left {
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+@keyframes shineMove {
+  0% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
