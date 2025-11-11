@@ -12,11 +12,11 @@ export default function LaligaHome() {
   const [table, setTable] = useState([]);
 
   useEffect(() => {
-    fetch("https://89d91acf6036.ngrok-free.app/match/api/laliga/last6/")
+    fetch(`${BASE_URL}/match/api/laliga/last6/`)
       .then((res) => res.json())
       .then((data) => setMatches(data));
 
-    fetch("https://89d91acf6036.ngrok-free.app/match/api/laliga/table/")
+    fetch(`${BASE_URL}/match/api/laliga/table/`)
       .then((res) => res.json())
       .then((data) => setTable(data));
   }, []);

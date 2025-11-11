@@ -5,20 +5,23 @@ import TopStats from "./TopStats";
 import HeroCarousel from "./HeroCarousel";
 import LeagueTable from "./LeagueTable";
 import CTASection from "./CTASection";
+import { BASE_URL } from "../config";
 
 export default function PremierHome() {
+  
   const [matches, setMatches] = useState([]);
   const [table, setTable] = useState([]);
 
   useEffect(() => {
-    fetch("https://89d91acf6036.ngrok-free.app/match/api/epl/last6/")
+    fetch(`${BASE_URL}/match/api/epl/last6/`)
       .then(res => res.json())
       .then(data => setMatches(data));
 
-    fetch("https://89d91acf6036.ngrok-free.app/match/api/epl/table/")
+    fetch(`${BASE_URL}/match/api/epl/table/`)
       .then(res => res.json())
       .then(data => setTable(data));
-      
+      console.log("BASE_URL:", BASE_URL);
+
   }, []);
   
 
