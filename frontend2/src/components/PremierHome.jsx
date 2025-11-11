@@ -5,7 +5,6 @@ import TopStats from "./TopStats";
 import HeroCarousel from "./HeroCarousel";
 import LeagueTable from "./LeagueTable";
 import CTASection from "./CTASection";
-import {BASE_URL} from "../config"
 
 export default function PremierHome() {
   const [matches, setMatches] = useState([]);
