@@ -13,7 +13,7 @@ export default function PredictionForm() {
   const theme = isLaliga ? "#A50044" : "#37003C";
 
   // ✅ Base URL
-  const BASE = `${BASE_URL}api/predict/`;
+  const BASE = `${BASE_URL}/api/predict/`;
 
   // ✅ URL team
   const TEAMS_URL = isLaliga
