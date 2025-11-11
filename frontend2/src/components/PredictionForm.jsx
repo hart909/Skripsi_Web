@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import {BASE_URL} from "../config"
 
 const HOME_COLOR = "#112F4A"; // biru gelap
 const AWAY_COLOR = "#7A1A1A"; // merah gelap
@@ -12,7 +13,7 @@ export default function PredictionForm() {
   const theme = isLaliga ? "#A50044" : "#37003C";
 
   // ✅ Base URL
-  const BASE = "http://127.0.0.1:8000/api/predict/";
+  const BASE = `${BASE_URL}/api/predict/`;
 
   // ✅ URL team
   const TEAMS_URL = isLaliga

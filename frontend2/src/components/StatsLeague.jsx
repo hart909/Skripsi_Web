@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import LeagueTable from "./LeagueTable";
 
+import { BASE_URL } from "../config"
+
+
 export default function StatsLeague({ league }) {
   const navigate = useNavigate();
   const location = useLocation();
@@ -11,8 +14,8 @@ export default function StatsLeague({ league }) {
   const theme = isLaliga ? "#A50044" : "#37003C";
 
   // BASE URL
-  const BASE_PRED = "http://127.0.0.1:8000/api/predict/";
-  const BASE_MATCH = "http://127.0.0.1:8000/match/api/";
+  const BASE_PRED = `${BASE_URL}/api/predict/`;
+  const BASE_MATCH = `${BASE_URL}/match/api/`;
 
   const TEAM_URL = isLaliga
     ? BASE_PRED + "teams/laliga/"
@@ -71,14 +74,19 @@ export default function StatsLeague({ league }) {
     }
   }
 
+   
+  
+/* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
-    fetchTeams();
     fetchTable();
+    fetchTeams();
   }, []);
+
+
 
   useEffect(() => {
     if (team?.id) fetchStats(team.id);
-  }, [team]);
+  }, [team]);// eslint-disable-next-line react-hooks/exhaustive-deps
 
   return (
     <div className="min-h-screen w-full bg-[#F6F7F8] px-4 py-10 flex flex-col items-center">

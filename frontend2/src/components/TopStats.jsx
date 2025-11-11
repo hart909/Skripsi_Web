@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 export default function TopStats({ data = {}, league = "laliga" }) {
   const { top_scorer = [], top_assist = [], clean_sheet = [] } = data;
 

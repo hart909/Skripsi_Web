@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const HOME_COLOR = "#112F4A";
 const AWAY_COLOR = "#7A1A1A";
-const DRAW_COLOR = "#D4AF37";
+
 
 export default function AlurNBR() {
   const navigate = useNavigate();
@@ -37,7 +37,6 @@ export default function AlurNBR() {
   // MAIN PARAMS
   const muH = dataNBR?.mu_home ?? 0;
   const muA = dataNBR?.mu_away ?? 0;
-  const diff = dataNBR?.goal_diff_pred ?? 0;
 
   // ✅ FILTER KONTRIBUSI — Biar EPL sama seperti LaLiga
   const KEEP = [

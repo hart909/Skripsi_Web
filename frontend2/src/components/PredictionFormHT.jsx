@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import {BASE_URL} from "../config"
 
 const HOME_COLOR = "#112F4A"; // biru gelap
 const AWAY_COLOR = "#7A1A1A"; // merah gelap
@@ -11,8 +12,7 @@ export default function PredictionFormHT() {
   const isLaliga = pathname.toLowerCase().includes("laliga");
   const theme = isLaliga ? "#A50044" : "#37003C";
 
-  // ✅ BASE
-  const BASE = "http://127.0.0.1:8000/api/predict/";
+  const BASE = `${BASE_URL}/api/predict/`;
 
   // ✅ URL team
   const TEAMS_URL = isLaliga
@@ -168,7 +168,7 @@ const league = path.includes("laliga") ? "laliga" : "premier";
               style={{ fontFamily: "Bebas Neue", minHeight: "52px" }}
             >
               {home?.logo && (
-                <img src={home.logo} className="w-8 h-8 object-contain" />
+                <img src={home.logo} alt="home team" className="w-8 h-8 object-contain" />
               )}
 
               <span className="text-lg tracking-wide">
@@ -195,7 +195,7 @@ const league = path.includes("laliga") ? "laliga" : "premier";
               style={{ fontFamily: "Bebas Neue", minHeight: "52px" }}
             >
               {away?.logo && (
-                <img src={away.logo} className="w-8 h-8 object-contain" />
+                <img src={away.logo}alt="away team"  className="w-8 h-8 object-contain" />
               )}
 
               <span className="text-lg tracking-wide">
