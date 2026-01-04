@@ -1,0 +1,10 @@
+1. Download zip dari GitHub
+2. Ekstrak folder zip
+3. download requirements untuk backend dengan cara cd backend
+4. (Opsional) buat virtual environment supaya tidak bentrok dengan library di laptop anda dengan cara python -m venv venv dan aktifkan dengan cara venv\Scripts\activate
+5. install dependency dengan cara pip install -r requirements.txt
+6. Jalankan server local backend anda dengan cara python manage.py runserver
+7. lakukan install dependency untuk frontend, pertama masuk ke path frontend2 dengan cara cd frontend2 (pastikan path di web skripsi jika belom maka back dengan ara cd ..)
+8. install dengan cara npm install
+9. Lalu jalankan frontend2 dengan cara npm start
+10. Maka anda akan mendapatkan tautan berisikan frontend local dan juga backend yang sudah jalan
