@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import LeagueTable from "./LeagueTable";
 
-import { BASE_URL } from "../config"
+// import { BASE_URL } from "../config"
 
 
 export default function StatsLeague({ league }) {
@@ -14,8 +14,11 @@ export default function StatsLeague({ league }) {
   const theme = isLaliga ? "#A50044" : "#37003C";
 
   // BASE URL
-  const BASE_PRED = `${BASE_URL}/api/predict/`;
-  const BASE_MATCH = `${BASE_URL}/match/api/`;
+  
+  // const BASE_PRED = `${BASE_URL}/api/predict/`;
+  // const BASE_MATCH = `${BASE_URL}/match/api/`;
+  const BASE_PRED = 'http://127.0.0.1:8000/api/predict/';
+  const BASE_MATCH = 'http://127.0.0.1:8000//match/api/';
 
   const TEAM_URL = isLaliga
     ? BASE_PRED + "teams/laliga/"

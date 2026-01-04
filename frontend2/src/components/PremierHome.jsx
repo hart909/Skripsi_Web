@@ -5,7 +5,7 @@ import TopStats from "./TopStats";
 import HeroCarousel from "./HeroCarousel";
 import LeagueTable from "./LeagueTable";
 import CTASection from "./CTASection";
-import { BASE_URL } from "../config";
+// import { BASE_URL } from "../config";
 
 export default function PremierHome() {
   
@@ -13,14 +13,17 @@ export default function PremierHome() {
   const [table, setTable] = useState([]);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/match/api/epl/last6/`)
+    
+    // fetch(`${BASE_URL}/match/api/epl/last6/`)
+    fetch('http://127.0.0.1:8000/match/api/epl/last6/')
       .then(res => res.json())
       .then(data => setMatches(data));
 
-    fetch(`${BASE_URL}/match/api/epl/table/`)
+    // fetch(`${BASE_URL}/match/api/epl/table/`)
+    fetch('http://127.0.0.1:8000/match/api/epl/table/')
       .then(res => res.json())
       .then(data => setTable(data));
-      console.log("BASE_URL:", BASE_URL);
+      // console.log("BASE_URL:", BASE_URL);
 
   }, []);
   

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import {BASE_URL} from "../config"
+// import {BASE_URL} from "../config"
 const HOME_COLOR = "#112F4A";
 const AWAY_COLOR = "#7A1A1A";
 const DRAW_COLOR = "#D4AF37";
@@ -38,8 +38,8 @@ export default function AlurBHM() {
     ? "https://upload.wikimedia.org/wikipedia/commons/5/54/LaLiga_EA_Sports_2023_Vertical_Logo.svg"
     : "https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg";
 
-  const BASE = `${BASE_URL}/api/predict/`;
-
+  // const BASE = `${BASE_URL}/api/predict/`;
+  const BASE = 'http://127.0.0.1:8000/api/predict/';
   async function fetchExplain() {
     try {
       setLoading(true);

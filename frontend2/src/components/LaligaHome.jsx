@@ -5,22 +5,24 @@ import TopStats from "./TopStats";
 import HeroCarousel from "./HeroCarousel";
 import LeagueTable from "./LeagueTable";
 import CTASection from "./CTASection";
-import {BASE_URL} from "../config"
+// import {BASE_URL} from "../config"
 
 export default function LaligaHome() {
   const [matches, setMatches] = useState([]);
   const [table, setTable] = useState([]);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/match/api/laliga/last6/`)
+    // fetch(`${BASE_URL}/match/api/laliga/last6/`)
+    fetch('http://127.0.0.1:8000/match/api/laliga/last6/')
       .then((res) => res.json())
       .then((data) => setMatches(data));
 
-    fetch(`${BASE_URL}/match/api/laliga/table/`)
+    // fetch(`${BASE_URL}/match/api/laliga/table/`)
+    fetch('http://127.0.0.1:8000/match/api/laliga/table/')
       .then((res) => res.json())
       .then((data) => setTable(data));
   }, []);
-console.log("BASE_URL:", BASE_URL);
+// console.log("BASE_URL:", BASE_URL);
 
   // ✅ CAROUSEL DATA
   const heroSlides = [
